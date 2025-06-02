@@ -359,25 +359,41 @@ class GameApp:
     def is_objective_completed(self, objective):
         from collections import deque
 
+        # Construire le graphe à partir des routes revendiquées par le joueur
         graph = {}
-        for c1, c2 in self.game.current_player.routes:
-            graph.setdefault(c1, []).append(c2)
-            graph.setdefault(c2, []).append(c1)
+        edge_points = {}  # Pour stocker les points des routes utilisées (optionnel)
+
+        for city1, city2 in self.game.current_player.routes:
+            graph.setdefault(city1, []).append(city2)
+            graph.setdefault(city2, []).append(city1)
+            #edge_points[frozenset([city1, city2])] = points
 
         start = objective['city1']
         target = objective['city2']
+
         visited = set()
-        queue = deque([start])
+        queue = deque([(start, [])])  # On stocke aussi le chemin parcouru
 
         while queue:
-            city = queue.popleft()
-            if city == target:
-                return True
-            if city not in visited:
-                visited.add(city)
-                queue.extend(graph.get(city, []))
+            current_city, path = queue.popleft()
 
-        return False
+            if current_city == target:
+                # Objectif atteint, calculer les points totaux du chemin
+                total_points = 0
+                for i in range(len(path) - 1):
+                    edge = frozenset([path[i], path[i + 1]])
+                    #total_points += edge_points[edge]
+                #print(f"Objectif atteint avec {total_points} points.")
+                print("Objectif atteint")
+                return True
+
+            if current_city not in visited:
+                visited.add(current_city)
+                for neighbor in graph.get(current_city, []):
+                    if neighbor not in visited:
+                        queue.append((neighbor, path + [current_city]))
+
+        return False  # Aucun chemin vers target trouvé avec les routes revendiquées
 
     def update_accomplished_display(self):
         for widget in self.accomplished_frame.winfo_children():

@@ -46,6 +46,9 @@ class Game:
         with open("data/destinations.json", "r", encoding="utf-8") as f:
             self.destinations = json.load(f)
 
+        with open("data/objectif.json", "r", encoding="utf-8") as f_ob:
+            self.objectif = json.load(f_ob)
+
         self.visible_cards = []
         for _ in range(5):
             if self.train_deck:
@@ -65,8 +68,8 @@ class Game:
     def draw_destination_cards(self, count=3):
         cards = []
         for _ in range(count):
-            if self.destinations:
-                cards.append(self.destinations.pop())
+            if self.objectif:
+                cards.append(self.objectif.pop())
         return cards
 
     def draw_objectives(self):
@@ -215,3 +218,22 @@ class Game:
                 return True  # Cette route aide à atteindre un objectif
 
         return False  # Route inutile à tout objectif
+
+    def is_objective_completed(self, player, city1, city2):
+        # Recrée le graphe à partir des routes revendiquées par ce joueur
+        graph = {}
+        for c1, c2 in player.routes:
+            graph.setdefault(c1, set()).add(c2)
+            graph.setdefault(c2, set()).add(c1)
+
+        # DFS pour savoir si on peut atteindre city2 depuis city1
+        def dfs(current, target, visited):
+            if current == target:
+                return True
+            visited.add(current)
+            for neighbor in graph.get(current, []):
+                if neighbor not in visited and dfs(neighbor, target, visited):
+                    return True
+            return False
+
+        return dfs(city1, city2, set())
