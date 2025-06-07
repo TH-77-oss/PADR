@@ -8,6 +8,7 @@ from tkinter.simpledialog import askstring
 
 from data.data import WAGON_COLORS
 from game import Game
+from histo import Historique
 
 
 class GameApp:
@@ -89,6 +90,8 @@ class GameApp:
         tk.Button(actions_frame, text="Passer tour", command=self.next_turn).pack(pady=2)
         tk.Button(actions_frame, text="Quitter plein écran",
                   command=lambda: self.root.attributes("-fullscreen", False)).pack(pady=2)
+        tk.Button(actions_frame, text="Fin de la partie",
+                  command=self.end_game).pack(pady=2)
 
         # Cartes wagon
         self.hand_label = tk.Label(left_frame, text="Cartes en main :", font=("Helvetica", 12), anchor="center", justify="center")
@@ -492,3 +495,10 @@ class GameApp:
             self.game.destination_card_draw_count = 0
             self.game.next_player()
             self.update_all()
+
+    def end_game(self):
+        print("Bouton cliqué")
+        historique = Historique(self.game)
+        historique.ecriture_partie("historique.txt")
+        messagebox.showinfo("Fin de la partie", "L'historique a été enregistré.")
+        self.root.destroy()

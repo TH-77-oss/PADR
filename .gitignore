@@ -1,0 +1,21 @@
+# Dossiers compilés Python
+__pycache__/
+*.py[cod]
+
+# Environnements virtuels
+.env
+.venv/
+env/
+venv/
+
+# Paramètres d'IDE
+.idea/
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers logs/temp
+*.log
+*.tmp

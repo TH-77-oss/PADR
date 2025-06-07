@@ -1,0 +1,15 @@
+Bienvenue sur l'historique des parties !
+
+--- Partie du 2025-06-07 18:32:36 ---
+Difficult� : Difficile
+Joueur n�1 : Victor - Score : 0 - Objectifs r�ussis : 0
+Joueur n�2 : IA - Score : 0 - Objectifs r�ussis : 0
+Gagnant : Victor avec 0 points
+
+
+--- Partie du 2025-06-07 18:35:44 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 8 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 2 - Objectifs reussis : 0
+Gagnant : Victor avec 8 points
+

@@ -257,4 +257,3 @@ class Game:
                 if neighbor not in visited:
                     queue.append(neighbor)
         return False
-
