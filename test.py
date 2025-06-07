@@ -116,4 +116,4 @@ class PlayerTestCase(unittest.TestCase):
         self.assertListEqual(self.player.destination_cards, ["El Paso", "Los Angeles"])
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
