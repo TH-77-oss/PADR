@@ -126,13 +126,13 @@ ROUTE "El Paso" "Oklahoma City" 5 yellow
 OBJECTIF Atlanta Nashville 1
 OBJECTIF Atlanta Raleigh 2
 OBJECTIF Atlanta Charleston 2
-OBJECTIF Atlanta Miami 5
+OBJECTIF Atlanta Portland 5
 OBJECTIF Atlanta "New Orleans" 4
 OBJECTIF Charleston Miami 4
 OBJECTIF Miami "New Orleans" 6
 OBJECTIF Houston "New Orleans" 2
 OBJECTIF "Little Rock" "New Orleans" 3
-OBJECTIF Nashville Raleigh 3
+OBJECTIF Nashville "New York" 3
 OBJECTIF Nashville Pittsburgh 4
 OBJECTIF Nashville "Saint Louis" 2
 OBJECTIF "Little Rock" Nashville 3
@@ -181,7 +181,7 @@ OBJECTIF Seattle Vancouver 1
 OBJECTIF Portland Seattle 1
 OBJECTIF Portland "Salt Lake City" 6
 OBJECTIF Denver "Salt Lake City" 3
-OBJECTIF Helena Seattle 6
+OBJECTIF Helena "New Orleans" 6
 OBJECTIF Portland "San Francisco" 6
 OBJECTIF "Salt Lake City" "San Francisco" 5
 OBJECTIF "Los Angeles" "San Francisco" 3
@@ -194,8 +194,8 @@ OBJECTIF Helena Omaha 5
 OBJECTIF Denver Helena 4
 OBJECTIF Boston Montreal 2
 OBJECTIF Charleston Raleigh 2
-OBJECTIF Raleigh Washington 2
-OBJECTIF Pittsburgh Washington 2
+OBJECTIF Raleigh Duluth  2
+OBJECTIF Pittsburgh "Los Angeles" 2
 OBJECTIF Portland Raleigh 14
 OBJECTIF Denver "El Paso" 4
 OBJECTIF "El Paso" Toronto 5

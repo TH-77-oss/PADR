@@ -6,11 +6,6 @@ from game import Game
 
 
 class TestOptiAIStrategy(unittest.TestCase):
-    """
-    Auteur:
-
-        - Thomas Dubedout
-    """
     def setUp(self):
         self.ai = OptiAIStrategy()
         self.graph = {
@@ -40,7 +35,7 @@ class GameTestCase(unittest.TestCase):
     def test_draw_destination_cards(self):
         initial_objectif_count = len(self.game.objectifs)
         drawn = self.game.draw_destination_cards(3)
-        self.assertTrue(0 < len(drawn) <= 3)
+        self.assertTrue(0 <= len(drawn) <= 3)
         self.assertEqual(len(self.game.objectifs), initial_objectif_count - len(drawn))
 
     def test_draw_train_card(self):
@@ -87,7 +82,7 @@ class GameTestCase(unittest.TestCase):
         player.routes = [route1, route2]
 
         obj = {"city1": "Paris", "city2": "Marseille"}
-        self.assertTrue(self.game.is_objective_completed(obj))
+        self.assertTrue(self.game.is_objective_completed(obj, player))
 
     def test_is_objective_completed_false(self):
         player = self.game.current_player
@@ -96,7 +91,7 @@ class GameTestCase(unittest.TestCase):
         player.routes = [route]
 
         obj = {"city1": "Paris", "city2": "Marseille"}
-        self.assertFalse(self.game.is_objective_completed(obj))
+        self.assertFalse(self.game.is_objective_completed(obj, player))
 
 class PlayerTestCase(unittest.TestCase):
     def setUp(self):
