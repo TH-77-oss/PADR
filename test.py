@@ -19,6 +19,12 @@ class TestOptiAIStrategy(unittest.TestCase):
         self.assertEqual(path, [('A', 'B'), ('B', 'C')])
         self.assertEqual(dist, 8)
 
+    def test_dijkstra_alternative_path(self):
+        # Teste un autre chemin dans le graphe
+        path, dist = self.ai.dijkstra(self.graph, 'B', 'A')
+        self.assertEqual(path, [('B', 'A')])
+        self.assertEqual(dist, 5)
+
 class GameTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -114,6 +120,27 @@ class PlayerTestCase(unittest.TestCase):
         self.player.destination_cards = ["El Paso"]
         self.player.add_destination_card("Los Angeles")
         self.assertListEqual(self.player.destination_cards, ["El Paso", "Los Angeles"])
+
+class RouteTestCase(unittest.TestCase):
+    def setUp(self):
+        # Initialisation d'une route pour les tests
+        self.route = Route("Paris", "Lyon", "blue", 3)
+
+    def test_is_between_true(self):
+        # Teste si la route est bien entre deux villes données
+        self.assertTrue(self.route.is_between("Paris", "Lyon"))
+        self.assertTrue(self.route.is_between("Lyon", "Paris"))
+
+    def test_is_between_false(self):
+        # Teste si la route n'est pas entre deux villes non concernées
+        self.assertFalse(self.route.is_between("Paris", "Marseille"))
+        self.assertFalse(self.route.is_between("Lyon", "Bordeaux"))
+
+    def test_set_claimed(self):
+        # Teste la revendication d'une route par un joueur
+        player = "Player1"
+        self.route.set_claimed(player)
+        self.assertEqual(self.route.claimed_by, player)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -74,3 +74,52 @@ Joueur 1 : Victor - Score : 4 - Objectifs reussis : 0
 Joueur 2 : IA - Score : 4 - Objectifs reussis : 0
 Gagnant : Victor avec 4 points
 
+
+--- Partie du 2025-06-10 11:56:00 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 4 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 4 - Objectifs reussis : 0
+Gagnant : Victor avec 4 points
+
+
+--- Partie du 2025-06-10 11:58:11 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 0 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 21 - Objectifs reussis : 0
+Gagnant : IA avec 21 points
+
+
+--- Partie du 2025-06-10 12:01:46 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 4 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 0 - Objectifs reussis : 0
+Gagnant : Victor avec 4 points
+
+
+--- Partie du 2025-06-10 12:02:50 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 0 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 21 - Objectifs reussis : 0
+Gagnant : IA avec 21 points
+
+
+--- Partie du 2025-06-10 12:04:41 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 4 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 0 - Objectifs reussis : 0
+Gagnant : Victor avec 4 points
+
+
+--- Partie du 2025-06-10 14:28:39 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 0 - Objectifs reussis : 0
+Joueur 2 : IA - Score : 21 - Objectifs reussis : 0
+Gagnant : IA avec 21 points
+
+
+--- Partie du 2025-06-10 14:37:38 ---
+Difficulte : Difficile
+Joueur 1 : Victor - Score : 4 - Objectifs reussis : 1
+Joueur 2 : IA - Score : 0 - Objectifs reussis : 0
+Gagnant : Victor avec 4 points
+

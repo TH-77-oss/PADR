@@ -8,5 +8,3 @@ if __name__ == "__main__":
 
     start_screen = StartScreen(root)
     root.mainloop()
-
-# Important : mettre les modules à installer pour pouvoir jouer dans le README sur Github
